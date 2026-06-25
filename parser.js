@@ -1,3 +1,9 @@
+marked.setOptions({
+  highlight: (code, lang) => {
+    return hljs.highlightAuto(code, [lang]).value;
+  },
+});
+
 document.getElementById("fileInput").addEventListener("change", async (e) => {
   const file = e.target.files[0];
   if (!file) return;
